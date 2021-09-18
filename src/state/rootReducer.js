@@ -1,11 +1,10 @@
-//initial state
-const defaultState = {
-  count: 69,
-};
+import { combineReducers } from "redux";
+import cartReducer from "./cart/cartReducer";
 
-const rootReducer = (state = defaultState, action) => {
-  console.log({ state, action });
-  return state;
-};
+const rootReducer = combineReducers(
+  cartReducer({
+    cart: cartReducer,
+  })
+);
 
 export default rootReducer;
