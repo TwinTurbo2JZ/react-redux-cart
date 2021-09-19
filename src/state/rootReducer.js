@@ -5,7 +5,7 @@ import { INCREASE, DECREASE, RESET, CHANGE_NAME } from "./cart/cartVariables";
 //initial state
 const defaultState = {
   cart: cartItems,
-  total: 0,
+  total: 100,
   amount: 0,
 };
 
