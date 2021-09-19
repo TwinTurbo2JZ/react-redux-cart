@@ -12,10 +12,10 @@ const App = () => {
   // cart setup
 
   return (
-    <main>
-      <Navbar cart={store.getState()} />
+    <Provider store={store}>
+      <Navbar />
       <CartContainer cart={cartItems} />
-    </main>
+    </Provider>
   );
 };
 
