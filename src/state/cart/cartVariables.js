@@ -1,4 +1,5 @@
 export const INCREASE = "INCREASE";
 export const DECREASE = "DECREASE";
-export const RESET = "RESET";
-export const CHANGE_NAME = "CHANGE_NAME";
+export const CLEAR_CART = "CLEAR_CART";
+export const GET_TOTAL = "GET_TOTAL";
+export const GET_AMOUNT = "GET_AMOUNT";
