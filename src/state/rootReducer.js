@@ -1,12 +1,18 @@
 import { combineReducers } from "redux";
 import cartItems from "../cart-items";
 import cartReducers from "./cart/cartReducers";
-import { INCREASE, DECREASE, RESET, CLEAR_CART } from "./cart/cartVariables";
+import {
+  INCREASE,
+  DECREASE,
+  RESET,
+  CLEAR_CART,
+  REMOVE,
+} from "./cart/cartVariables";
 //initial state
 const defaultState = {
   cart: cartItems,
   total: 100,
-  amount: 0,
+  amount: 11,
 };
 
 const rootReducer = (state = defaultState, action) => {
@@ -21,6 +27,10 @@ const rootReducer = (state = defaultState, action) => {
 
   if (action.type === CLEAR_CART) {
     return { ...state, cart: [] };
+  }
+
+  if (action.type === REMOVE) {
+    return { ...state };
   }
 
   return state;
