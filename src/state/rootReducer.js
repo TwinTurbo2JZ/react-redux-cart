@@ -11,8 +11,8 @@ import {
 //initial state
 const defaultState = {
   cart: cartItems,
-  total: 100,
-  amount: 11,
+  total: 0,
+  amount: 0,
 };
 
 const rootReducer = (state = defaultState, action) => {
@@ -59,7 +59,20 @@ const rootReducer = (state = defaultState, action) => {
   }
 
   if (action.type === GET_TOTALS) {
-    console.log("get totals");
+    let { total, amount } = state.cart.reduce(
+      (cartTotal, curItem) => {
+        const { price, amount } = curItem;
+        cartTotal.amount += amount;
+
+        const itemTotal = price * amount;
+        console.log(itemTotal);
+        cartTotal.total += itemTotal;
+        return cartTotal;
+      },
+      { total: 0, amount: 0 }
+    );
+    total = parseFloat(total.toFixed(2));
+    return { ...state, total, amount };
   }
 
   return state;
