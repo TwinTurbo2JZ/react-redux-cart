@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import CartContainer from "./components/CartContainer";
 // items
-import cartItems from "./cart-items";
+// import cartItems from "./cart-items";
 // redux stuff
 import { Provider } from "react-redux";
 import store from "../src/state/store";

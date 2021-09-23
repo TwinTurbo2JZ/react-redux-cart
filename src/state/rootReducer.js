@@ -1,5 +1,5 @@
-import { act } from "react-dom/test-utils";
-import { combineReducers } from "redux";
+// import { act } from "react-dom/test-utils";
+// import { combineReducers } from "redux";
 import cartItems from "../cart-items";
 import {
   INCREASE,
