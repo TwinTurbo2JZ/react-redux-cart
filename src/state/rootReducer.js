@@ -1,7 +1,13 @@
 import { act } from "react-dom/test-utils";
 import { combineReducers } from "redux";
 import cartItems from "../cart-items";
-import { INCREASE, DECREASE, CLEAR_CART, REMOVE } from "./cart/cartVariables";
+import {
+  INCREASE,
+  DECREASE,
+  CLEAR_CART,
+  REMOVE,
+  GET_TOTALS,
+} from "./cart/cartVariables";
 //initial state
 const defaultState = {
   cart: cartItems,
@@ -50,6 +56,10 @@ const rootReducer = (state = defaultState, action) => {
       ...state,
       cart: state.cart.filter((item) => item.id !== action.payload.id),
     };
+  }
+
+  if (action.type === GET_TOTALS) {
+    console.log("get totals");
   }
 
   return state;
